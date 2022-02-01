@@ -1,0 +1,10 @@
+.progressBar {
+  height: 3px;
+  width: 100%;
+  display: flex;
+  flex: 1;
+}
+
+.progressBar:after {
+  content: '\200b';
+}

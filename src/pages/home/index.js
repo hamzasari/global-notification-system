@@ -67,7 +67,7 @@ const Home = () => {
           <input
             type="text"
             className={styles.textInput}
-            placeHolder="Timeout in milliseconds (Default value is 5000)"
+            placeholder="Timeout in milliseconds (Default value is 5000)"
             value={autoHideTimeout}
             onChange={onChangeTimeoutInputHandler}
           />

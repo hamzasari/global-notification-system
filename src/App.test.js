@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('checks if information button exists', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const informationButtonElement = screen.getByText(/INFORMATION/i);
 
-  expect(linkElement).toBeInTheDocument();
+  expect(informationButtonElement).toBeInTheDocument();
 });
