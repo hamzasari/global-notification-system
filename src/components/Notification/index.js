@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useNotificationStyle from '../../common/hooks/useNotificationStyle';
 import useNotification from '../../common/hooks/useNotification';
 
+import NotificationProgressBar from '../NotificationProgressBar';
+
 import PropList from './propTypes';
 import styles from './styles.module.css';
 
@@ -18,9 +20,19 @@ import styles from './styles.module.css';
  * @param {string} props.position - notification position
  * @param {string} props.title - notification title
  * @param {string} props.message - notification message
+ * @param {boolean} props.autoHide - auto hide?
+ * @param {number} props.autoHideTimeout - auto hide timeout in milliseconds
  * @returns {Element} - notification component
  */
-const Notification = ({ id, type, position, title, message }) => {
+const Notification = ({
+  id,
+  type,
+  position,
+  title,
+  message,
+  autoHide,
+  autoHideTimeout,
+}) => {
   const { icon, closeIcon, color } = useNotificationStyle(type);
   const { removeNotification } = useNotification();
 
@@ -50,6 +62,13 @@ const Notification = ({ id, type, position, title, message }) => {
           <FontAwesomeIcon icon={closeIcon} />
         </button>
       </div>
+      {autoHide && (
+        <NotificationProgressBar
+          color={color}
+          timeoutInMilliseconds={autoHideTimeout}
+          onComplete={onClickHandler}
+        />
+      )}
     </div>
   );
 };

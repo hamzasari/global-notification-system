@@ -6,4 +6,6 @@ export default {
   position: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   message: PropTypes.string,
+  autoHide: PropTypes.bool,
+  autoHideTimeout: PropTypes.number,
 };
