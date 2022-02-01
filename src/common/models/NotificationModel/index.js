@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
  * Notification Model
  * <p>Model to store notifications</p>
  * <p>In this project all notifications will be based on this model and ambiguity of objects used will be prevented</p>
- * <p>I added autoHide and autoHideTimeout parameters for future use</p>
  *
  * @param {string} type - type
  * @param {string} position - position

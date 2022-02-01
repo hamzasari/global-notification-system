@@ -13,6 +13,8 @@ import styles from './styles.module.css';
 /**
  * Notification Component
  * <p>Component to render only one notification</p>
+ * <p>If this element has autoHide prop as true, NotificationProgressBar component will be rendered at the bottom of this component</p>
+ * <p>After progress bar reaches 0 width, callback function will be automatically called and removeNotification context function will be called to remove related notification from notifications</p>
  *
  * @param {object} props - props
  * @param {string} props.id - notification id
@@ -75,4 +77,6 @@ const Notification = ({
 
 Notification.propTypes = PropList;
 
+// NOTE: memo is used here to get pure component, and memo also prevents re-render issues when this component's props isn't changed
+// In this project, equality function is not used in memo usages, because for the sake of this demo there is not much complex props and components and equality functions are not needed
 export default memo(Notification);
