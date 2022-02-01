@@ -1,0 +1,45 @@
+.notificationContainer {
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 999999;
+}
+
+.top {
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+}
+
+.bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+}
+
+.topLeft {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+.topRight {
+  top: 0;
+  right: 0;
+}
+
+.bottomLeft {
+  bottom: 0;
+  left: 0;
+}
+
+.bottomRight {
+  bottom: 0;
+  right: 0;
+}
