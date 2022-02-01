@@ -1,29 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import NotificationProvider from './common/providers/NotificationProvider';
+
+import Notifications from './components/Notifications';
+import Home from './pages/home';
 
 /**
  * App
  * <p>Main entry point</p>
+ * <p>NotificationProvider is added here to use react context within children components</p>
+ * <p>Also, Notifications component is added here to show notifications using react context</p>
  *
  * @returns {Element} - JSX.Element
  */
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NotificationProvider>
+      <Home />
+      <Notifications />
+    </NotificationProvider>
   );
 }
 
