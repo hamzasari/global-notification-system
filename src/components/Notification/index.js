@@ -1,8 +1,9 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import useNotificationStyle from '../../common/hooks/useNotificationStyle';
+import useNotification from '../../common/hooks/useNotification';
 
 import PropList from './propTypes';
 import styles from './styles.module.css';
@@ -21,12 +22,18 @@ import styles from './styles.module.css';
  */
 const Notification = ({ id, type, position, title, message }) => {
   const { icon, closeIcon, color } = useNotificationStyle(type);
+  const { removeNotification } = useNotification();
+
+  const onClickHandler = useCallback(() => {
+    removeNotification(id);
+  }, [id, removeNotification]);
 
   return (
     <div
       className={`${styles.notification} ${styles[position]}`}
       style={{ borderColor: color }}
-      data-testid={id}>
+      data-testid={id}
+      onClick={onClickHandler}>
       <div className={styles.notificationContent}>
         <div className={styles.notificationIcon}>
           <FontAwesomeIcon icon={icon} color={color} />
