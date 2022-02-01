@@ -35,7 +35,7 @@ const Home = () => {
     <div className={styles.page}>
       <div className={styles.demoContainer}>
         <div className={styles.commonContainer}>
-          <label clasName={styles.label}>Position</label>
+          <label className={styles.label}>Position</label>
           <select
             className={styles.select}
             value={notificationPosition}
