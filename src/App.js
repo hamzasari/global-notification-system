@@ -1,6 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 
+/**
+ * App
+ * <p>Main entry point</p>
+ *
+ * @returns {Element} - JSX.Element
+ */
 function App() {
   return (
     <div className="App">
@@ -13,8 +19,7 @@ function App() {
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Learn React
         </a>
       </header>

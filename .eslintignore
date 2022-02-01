@@ -1,0 +1,11 @@
+node_modules
+public
+dist
+.eslintrc.js
+babel.config.js
+metro.config.js
+config-overrides.js
+jest.config.js
+docs
+build
+__tests__
