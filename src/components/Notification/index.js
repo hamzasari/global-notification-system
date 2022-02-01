@@ -1,7 +1,8 @@
 import { memo } from 'react';
 
-import { faCoffee, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import useNotificationStyle from '../../common/hooks/useNotificationStyle';
 
 import PropList from './propTypes';
 import styles from './styles.module.css';
@@ -19,16 +20,16 @@ import styles from './styles.module.css';
  * @returns {Element} - notification component
  */
 const Notification = ({ id, type, position, title, message }) => {
-  console.info(type);
+  const { icon, closeIcon, color } = useNotificationStyle(type);
 
   return (
     <div
       className={`${styles.notification} ${styles[position]}`}
-      style={{ borderColor: 'red' }}
+      style={{ borderColor: color }}
       data-testid={id}>
       <div className={styles.notificationContent}>
         <div className={styles.notificationIcon}>
-          <FontAwesomeIcon icon={faCoffee} color={'red'} />
+          <FontAwesomeIcon icon={icon} color={color} />
         </div>
         <div className={styles.notificationTextContainer}>
           <p className={styles.notificationTitle} data-testid="title">
@@ -39,7 +40,7 @@ const Notification = ({ id, type, position, title, message }) => {
           </p>
         </div>
         <button>
-          <FontAwesomeIcon icon={faTimes} />
+          <FontAwesomeIcon icon={closeIcon} />
         </button>
       </div>
     </div>
